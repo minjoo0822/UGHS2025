@@ -38,97 +38,98 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 60px 20px 20px;
+    padding: 60px 15px 20px;
     background: linear-gradient(180deg, var(--bg-purple) 0%, var(--deep-blue) 100%);
 }
 
-/* 은은한 네온 효과 추가 */
+/* 제목 은은한 네온 */
 .neon-text {
-    text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.3),
-        0 0 10px rgba(255, 255, 255, 0.2),
-        0 0 15px var(--accent-gold);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.2), 0 0 8px var(--accent-gold);
 }
 
-.train-main-view {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+.highlight-gold {
+    color: var(--accent-gold);
+    font-weight: bold;
 }
 
 .fixed-train-img {
-    width: 280px;
+    width: 240px;
     height: auto;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
 }
 
-.main-title { font-family: 'SfHambakneun'; font-size: 2.5rem; margin: 10px 0; text-align: center; }
-.sub-title { font-size: 1rem; opacity: 0.9; }
+.main-title { font-family: 'SfHambakneun'; font-size: 2.1rem; margin: 10px 0; text-align: center; }
 
-/* 모시는 글 전용 스타일 */
-.greeting-box {
-    text-align: center;
-    max-width: 450px !important;
-}
-.greeting-content {
-    line-height: 1.8;
-    font-size: 0.95rem;
-    word-break: keep-all;
-    margin-bottom: 25px;
-}
-.greeting-content p { margin-bottom: 15px; }
-.greeting-footer {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 15px;
-    font-size: 0.9rem;
-}
-.g-date { margin-bottom: 10px; opacity: 0.8; }
-.greeting-footer b { color: var(--accent-gold); }
+/* 모시는 글 */
+.greeting-box { text-align: center; max-width: 480px; padding: 30px 25px; }
+.greeting-content { line-height: 1.75; font-size: 0.9rem; word-break: keep-all; }
+.greeting-footer { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px; font-size: 0.9rem; margin-top: 15px; }
 
-/* 공통 유리 질감 카드 */
-.glass-box {
-    background: rgba(255, 255, 255, 0.15);
+/* 부스 가로 스크롤 레이아웃 */
+.horizontal-scroll-wrapper {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar { display: none; }
+
+.floor-slide {
+    min-width: 100%;
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 100%;
-    max-width: 420px;
+    height: 68vh;
+    overflow-y: auto;
 }
 
-.scroll-area { max-height: 65vh; overflow-y: auto; }
+.floor-title { font-family: 'SfHambakneun'; color: var(--accent-gold); margin-bottom: 20px; text-align: center; font-size: 1.2rem; }
 
-header {
-    position: fixed; top: 0; width: 100%; padding: 20px;
-    display: flex; justify-content: space-between; align-items: center;
-    z-index: 100; background: rgba(74, 79, 176, 0.8);
+/* 부스 카드 확대 */
+.booth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.booth-item {
+    background: white;
+    color: #333;
+    padding: 15px 12px;
+    border-radius: 12px;
+    border-left: 6px solid var(--bg-purple);
+    min-height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.logo { font-family: 'SfHambakneun'; }
-.menu-btn { background: none; border: 1px solid white; color: white; padding: 6px 16px; border-radius: 20px; cursor: pointer; }
-.section-heading { font-family: 'SfHambakneun'; color: var(--accent-gold); margin-bottom: 20px; }
+.booth-num { font-size: 0.75rem; font-weight: bold; color: var(--bg-purple); margin-bottom: 4px; }
+.booth-name { font-size: 0.9rem; font-weight: bold; line-height: 1.25; margin-bottom: 4px; }
+.booth-desc { font-size: 0.7rem; color: #777; }
+
+/* 무대 공연 스크롤 영역 */
+.scroll-area { max-height: 72vh; overflow-y: auto; }
+.perf-item {
+    background: white; color: #333; margin-bottom: 12px; padding: 15px; border-radius: 12px;
+    font-size: 0.85rem; border-right: 6px solid var(--bg-purple);
+}
+.perf-header { font-weight: bold; color: var(--bg-purple); font-size: 0.75rem; margin-bottom: 5px; display: block; }
+.perf-title { font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 5px; }
+.perf-team { font-size: 0.75rem; color: #666; }
+
+/* 공용 UI */
+.glass-box { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 20px; padding: 20px; width: 100%; max-width: 440px; border: 1px solid rgba(255, 255, 255, 0.2); }
+header { position: fixed; top: 0; width: 100%; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(74, 79, 176, 0.8); }
+.logo { font-family: 'SfHambakneun'; font-size: 0.95rem; }
+.menu-btn { background: none; border: 1px solid white; color: white; padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; }
+.section-heading { font-family: 'SfHambakneun'; color: var(--accent-gold); margin-bottom: 15px; font-size: 1.4rem; }
 
 table { width: 100%; border-collapse: collapse; background: white; color: #333; border-radius: 10px; overflow: hidden; }
 th, td { border: 1px solid #ddd; padding: 12px; text-align: center; font-size: 0.8rem; }
 th { background: var(--bg-purple); color: white; }
 
-.booth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.booth-item { background: white; color: #333; padding: 10px; border-radius: 8px; border-left: 5px solid var(--bg-purple); }
-.booth-num { font-size: 0.7rem; font-weight: bold; color: var(--bg-purple); }
-.booth-name { font-size: 0.85rem; font-weight: bold; }
-.booth-club { font-size: 0.7rem; color: #777; }
-
-.perf-item { background: white; color: #333; margin-bottom: 10px; padding: 12px; border-radius: 8px; font-size: 0.85rem; border-right: 5px solid var(--bg-purple); }
-.perf-team { font-size: 0.75rem; color: #888; margin-top: 4px; }
-
-.overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9); z-index: 1000;
-    display: none; flex-direction: column; align-items: center; justify-content: center;
-}
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; }
 .overlay-menu a { color: white; text-decoration: none; font-size: 1.8rem; font-family: 'SfHambakneun'; margin: 15px 0; display: block; }
 .close-btn { position: absolute; top: 20px; right: 20px; font-size: 2.5rem; color: white; cursor: pointer; }
-
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} }
-.scroll-hint { animation: bounce 2s infinite; font-size: 0.8rem; margin-top: 30px; opacity: 0.7; }
+.scroll-hint { animation: bounce 2s infinite; font-size: 0.75rem; margin-top: 15px; opacity: 0.7; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-8px);} }
