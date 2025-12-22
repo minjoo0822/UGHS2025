@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제28회 백합의 향 - 시간을 달리는 기차</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">울산여자고등학교</div>
+        <button class="menu-btn" onclick="toggleMenu()">더보기 ☰</button>
+    </header>
+
+    <div class="container">
+        <section id="home" class="snap-section hero">
+            <div class="train-main-view">
+                <img src="train.png" alt="기차" class="fixed-train-img">
+            </div>
+            <div class="title-group">
+                <p class="sub-title">제 28회 백합의 향</p>
+                <h1 class="main-title neon-text">시간을 달리는 기차</h1>
+                <p class="date">2025.12.29(월) ~ 12.30(화)</p>
+            </div>
+            <div class="scroll-hint">▼ 아래로 스크롤하여 입장</div>
+        </section>
+
+        <section id="greeting" class="snap-section content-section">
+            <h2 class="section-heading">✉ 모시는 글</h2>
+            <div class="glass-box greeting-box">
+                <div class="greeting-content">
+                    <p>멈추지 않고 달리는 기차처럼, 우리는 끊임없이 성장하며 자신만의 길을 만들어갑니다. 이 번 축제는 지난 시간을 되돌아보고, 지금 이 순간을 만끽하며, 다가올 내일을 기대하는 뜻 깊은 시간이 될 것입니다.</p>
+                    <p>하나의 기차에 몸을 싣고 나아가듯, 학교 구성원 모두의 마음을 모아 서로를 비추는 시간이 되었으면 합니다. 이 특별한 여정을 떠나는 기차에 함께 올라타 주신 여러분께 감사드리며, 축제의 순간을 마음껏 즐겨주시기 바랍니다.</p>
+                </div>
+                <div class="greeting-footer">
+                    <p class="g-date">2025.12.22.(월)</p>
+                    <p>울산여자고등학교장 <b>주영택</b></p>
+                    <p>학생회장 <b>황예현</b></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="snap-section content-section">
+            <h2 class="section-heading">📅 축제 전체 일정</h2>
+            <div class="glass-box">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr><th>날짜</th><th>시간</th><th>내용</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td rowspan="2">29일</td><td>13:40~14:00</td><td>개막식 및 안전교육</td></tr>
+                            <tr><td>14:00~16:00</td><td>부스 및 전시 체험</td></tr>
+                            <tr><td rowspan="4">30일</td><td>08:40~12:30</td><td>부스 및 전시 체험</td></tr>
+                            <tr><td>12:30~13:30</td><td>점심시간</td></tr>
+                            <tr><td>13:30~14:00</td><td>뮤지컬 공연</td></tr>
+                            <tr><td>14:00~16:30</td><td>무대 공연 (백합관)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="booths" class="snap-section content-section">
+            <h2 class="section-heading">🎪 부스 배치표</h2>
+            <div class="scroll-area glass-box">
+                <div class="booth-grid" id="boothGrid"></div>
+            </div>
+        </section>
+
+        <section id="performances" class="snap-section content-section">
+            <h2 class="section-heading">🎤 무대 공연 순서</h2>
+            <div class="scroll-area glass-box">
+                <div class="performance-list" id="performanceList"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="overlay" id="menuOverlay">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="#home" onclick="toggleMenu()">축제 홈</a></li>
+                <li><a href="#greeting" onclick="toggleMenu()">모시는 글</a></li>
+                <li><a href="#schedule" onclick="toggleMenu()">상세 일정</a></li>
+                <li><a href="#booths" onclick="toggleMenu()">부스 안내</a></li>
+                <li><a href="#performances" onclick="toggleMenu()">공연 순서</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
