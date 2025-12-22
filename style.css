@@ -92,13 +92,13 @@ body {
 
 /* 부스 카드 확대 */
 .booth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.booth-item {
-    background: white;
-    color: #333;
-    padding: 15px 12px;
-    border-radius: 12px;
+.booth-item { 
+    background: white; 
+    color: #333; 
+    padding: 15px 12px; 
+    border-radius: 12px; 
     border-left: 6px solid var(--bg-purple);
-    min-height: 95px;
+    min-height: 95px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,8 +109,8 @@ body {
 
 /* 무대 공연 스크롤 영역 */
 .scroll-area { max-height: 72vh; overflow-y: auto; }
-.perf-item {
-    background: white; color: #333; margin-bottom: 12px; padding: 15px; border-radius: 12px;
+.perf-item { 
+    background: white; color: #333; margin-bottom: 12px; padding: 15px; border-radius: 12px; 
     font-size: 0.85rem; border-right: 6px solid var(--bg-purple);
 }
 .perf-header { font-weight: bold; color: var(--bg-purple); font-size: 0.75rem; margin-bottom: 5px; display: block; }
